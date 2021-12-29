@@ -33,24 +33,14 @@ done
       else	
              while [ $headCount -lt $((tailCount+2)) ] && 
 [ $tailCount -lt $((headCount+2)) ]
-
-	do
-		
+	do		
                              flipCheck=$((RANDOM%2))
         
 	    if [ $flipCeck -eq $isHead ]
-        
 	      then
-                	
                                 let HCount++
-
-        	
                           else
-                
-	           let TCount++
-
-      
+	           let TCount++      
   	  fi
-	
                   done
   fi
