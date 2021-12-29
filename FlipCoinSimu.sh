@@ -22,27 +22,35 @@ while [ $HCount -lt 21 ] && [ $TCount -lt 21 ]
 done
 
    if [ $HCount -gt $TCount ]
-
        then
-	
-              Hwin=$((HCount-TCount))
-	
+              Hwin=$((HCount-TCount))	
               echo "Head wins by $Hwin times"
 
-
-
        elif [ $TCount -gt $HCount ]
-
            then
-	
                  Twin=$((TCount-HCount))
-	
                  echo "Tail wins by $Twin times"
+      else	
+             while [ $headCount -lt $((tailCount+2)) ] && 
+[ $tailCount -lt $((headCount+2)) ]
 
-
-      else
+	do
 		
-             echo "Tie"
+                             flipCheck=$((RANDOM%2))
+        
+	    if [ $flipCeck -eq $isHead ]
+        
+	      then
+                	
+                                let HCount++
 
+        	
+                          else
+                
+	           let TCount++
 
+      
+  	  fi
+	
+                  done
   fi
