@@ -2,12 +2,12 @@
 
 echo "Welcome to Coin Flip Simulation Program"
 
-read -p "Enter numer for  fliping coin" n;
 isHead=1;
 HCount=0;
 TCount=0;
+TotalCount=0;
 
-for (( i=0;i<$n;i++ ))
+while [ $HCount -lt 21 ] && [ $TCount -lt 21 ]
  do
         flipCheck=$(( RANDOM%2 ));
 
@@ -17,10 +17,32 @@ for (( i=0;i<$n;i++ ))
              else 
                      let TCount++
        fi
+    let TotalCount++
+
 done
 
-echo "Number of times Head won = "$HCount;
+   if [ $HCount -gt $TCount ]
 
-echo "Number of times Tail  won = "$TCount;
+       then
+	
+              Hwin=$((HCount-TCount))
+	
+              echo "Head wins by $Hwin times"
 
 
+
+       elif [ $TCount -gt $HCount ]
+
+           then
+	
+                 Twin=$((TCount-HCount))
+	
+                 echo "Tail wins by $Twin times"
+
+
+      else
+		
+             echo "Tie"
+
+
+  fi
